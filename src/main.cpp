@@ -13,6 +13,6 @@ int main(){
     log4cpp::Appender *journalAppender = new edgelog::JournalAppender("JournalAppender");
 
     logger.addAppender(static_cast<log4cpp::Appender*>(journalAppender));
-    logger.info("TESTDSADSADsa");
+    logger.info("First Log Message");
     return 0;
 }
