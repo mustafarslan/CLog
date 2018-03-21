@@ -6,18 +6,23 @@
 #define EDGELOG_JOURNALAPPENDER_H
 
 #include <systemd/sd-journal.h>
-#include <log4cpp/Category.hh>
+#include <log4cpp/Layout.hh>
 #include <log4cpp/LayoutAppender.hh>
 #include <log4cpp/LoggingEvent.hh>
 
 namespace edgelog {
 
-    class JournalAppender: public log4cpp::Appender  {
+    class JournalAppender: public log4cpp::LayoutAppender {
         public:
+            JournalAppender();
             JournalAppender(const std::string& name);
+            ~JournalAppender();
+            void reopen();
             void close();
             bool requiresLayout() const;
-            void setLayout(log4cpp::Layout *layout);
+            void Append(const log4cpp::LoggingEvent & event);
+
+        protected:
             void _append(const log4cpp::LoggingEvent& event);
 
     };

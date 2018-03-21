@@ -6,7 +6,9 @@
 
 namespace edgelog {
 
-    JournalAppender::JournalAppender(const std::string& name) {}
+    JournalAppender::JournalAppender(const std::string& name): LayoutAppender(name) {
+
+    }
 
     void JournalAppender::close() {
 
@@ -16,12 +18,15 @@ namespace edgelog {
 
     }
 
-    void JournalAppender::setLayout(log4cpp::Layout *layout){
-
+    void JournalAppender::Append(const log4cpp::LoggingEvent &event) {
+        _append(event);
     }
 
     void JournalAppender::_append(const log4cpp::LoggingEvent &event){
-        std::cout << "TEST" << std::endl;
+        std::string message;
+        message.append(event.message);
+
+        sd_journal_send(message.c_str(),NULL);
     }
 
 }
