@@ -15,9 +15,9 @@ namespace edgelog {
     class JournalAppender: public log4cpp::LayoutAppender {
         public:
             JournalAppender();
-            JournalAppender(const std::string& name);
+            JournalAppender(std::string name);
             ~JournalAppender();
-            void reopen();
+            bool reopen();
             void close();
             bool requiresLayout() const;
             void Append(const log4cpp::LoggingEvent & event);
