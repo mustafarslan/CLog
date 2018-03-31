@@ -10,7 +10,7 @@
 int main(){
     std::cout << "Hello World!" << std::endl;
     log4cpp::Category &logger = log4cpp::Category::getRoot();
-    log4cpp::Appender *journalAppender = new edgelog::JournalAppender("JournalAppender");
+    log4cpp::Appender *journalAppender = new clog::JournalAppender("JournalAppender");
 
     logger.addAppender(static_cast<log4cpp::Appender*>(journalAppender));
     logger.info("First Log Message");
