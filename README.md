@@ -1,4 +1,4 @@
-# edgeLog
+# CLog
 C++ Logger with JournalD support
 
 PS:
