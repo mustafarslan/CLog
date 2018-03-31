@@ -2,15 +2,15 @@
 // Created by mustafarslan on 3/19/18.
 //
 
-#ifndef EDGELOG_JOURNALAPPENDER_H
-#define EDGELOG_JOURNALAPPENDER_H
+#ifndef CLOG_JOURNALAPPENDER_H
+#define CLOG_JOURNALAPPENDER_H
 
 #include <systemd/sd-journal.h>
 #include <log4cpp/Layout.hh>
 #include <log4cpp/LayoutAppender.hh>
 #include <log4cpp/LoggingEvent.hh>
 
-namespace edgelog {
+namespace clog {
 
     class JournalAppender: public log4cpp::LayoutAppender {
         public:
@@ -29,4 +29,4 @@ namespace edgelog {
 
 }
 
-#endif //EDGELOG_JOURNALAPPENDER_H
+#endif //CLOG_JOURNALAPPENDER_H
