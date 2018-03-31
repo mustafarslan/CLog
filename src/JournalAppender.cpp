@@ -4,7 +4,7 @@
 
 #include "JournalAppender.h"
 
-namespace edgelog {
+namespace clog {
 
     JournalAppender::JournalAppender(std::string name): LayoutAppender(name) {
 
