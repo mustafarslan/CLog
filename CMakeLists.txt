@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.7.2)
-set(TARGET edgelog)
+set(TARGET clog)
 project(${TARGET})
 
 set(LIB_FOLDER ${CMAKE_SOURCE_DIR}/lib)
