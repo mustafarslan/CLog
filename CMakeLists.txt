@@ -13,7 +13,7 @@ pkg_search_module(LIBSYSTEMD REQUIRED libsystemd)
 
 find_library(LOG4CPP NAMES liblog4cpp.a PATHS ${LIB_BIN_FOLDER})
 
-add_executable (${TARGET} ./src/main.cpp ./src/JournalAppender.cpp)
+add_executable (${TARGET} ./src/main.cpp ./src/JournalAppender.cpp include/LogAPI.h src/LogAPI.cpp include/Constant.h)
 #add_library(edgelog SHARED ./src/main.cpp)
 target_compile_options(${TARGET} PUBLIC ${LIBSYSTEMD_CFLAGS_OTHER})
 target_link_libraries (${TARGET}

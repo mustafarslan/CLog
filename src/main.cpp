@@ -3,16 +3,26 @@
 //
 
 #include <iostream>
-#include <log4cpp/Category.hh>
-#include <log4cpp/Appender.hh>
-#include "JournalAppender.h"
+#include "LogAPI.h"
+
+void test();
 
 int main(){
     std::cout << "Hello World!" << std::endl;
-    log4cpp::Category &logger = log4cpp::Category::getRoot();
-    log4cpp::Appender *journalAppender = new clog::JournalAppender("JournalAppender");
 
-    logger.addAppender(static_cast<log4cpp::Appender*>(journalAppender));
-    logger.info("First Log Message");
+    clog::LogAPI & logger = clog::LogAPI::getInstance();
+
+    logger.init();
+
+    logger.info("Hello from LogAPI");
+
+    test();
+
     return 0;
+}
+
+
+void test(){
+    clog::LogAPI & logger = clog::LogAPI::getInstance();
+    logger.info("Hello From other function");
 }
