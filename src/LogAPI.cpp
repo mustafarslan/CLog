@@ -19,7 +19,7 @@ namespace clog {
 
 
         // Add FileAppender
-        appender = new log4cpp::FileAppender("AppManager", "log.txt");
+        appender = new log4cpp::FileAppender("TestManager", "log.txt");
         logger.addAppender(appender);
 
 
