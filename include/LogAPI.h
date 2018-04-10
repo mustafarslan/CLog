@@ -14,10 +14,12 @@ namespace clog {
         public:
             static LogAPI & getInstance();
             void init();
+            void addAppender(AppenderType appenderType);
             void warn(const std::string& message, const std::string & functionName = __builtin_FUNCTION(), int line = __builtin_LINE());
             void info(const std::string& message, const std::string & functionName = __builtin_FUNCTION(), int line = __builtin_LINE());
             void error(const std::string& message, const std::string & functionName = __builtin_FUNCTION(), int line = __builtin_LINE());
             void debug(const std::string& message, const std::string & functionName = __builtin_FUNCTION(), int line = __builtin_LINE());
+
 
         private:
             log4cpp::Category & logger = log4cpp::Category::getRoot();

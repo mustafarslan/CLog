@@ -4,25 +4,25 @@
 
 #include <iostream>
 #include "LogAPI.h"
+#include <memory>
 
 void test();
+
+// lazy coder move
+std::shared_ptr<clog::LogAPI> logger = std::make_shared<clog::LogAPI>(clog::LogAPI::getInstance());
 
 int main(){
     std::cout << "Hello World!" << std::endl;
 
-    clog::LogAPI & logger = clog::LogAPI::getInstance();
+    logger->init();
 
-    logger.init();
-
-    logger.info("Hello from LogAPI");
+    logger->info("Hello from LogAPI");
 
     test();
 
     return 0;
 }
 
-
 void test(){
-    clog::LogAPI & logger = clog::LogAPI::getInstance();
-    logger.info("Hello From other function");
+    logger->info("Hello From other function");
 }
